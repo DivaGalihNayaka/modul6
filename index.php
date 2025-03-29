@@ -20,24 +20,27 @@
             <th>No.</th>
             <th>Nama</th>
             <th>Foto</th>
+            <th>Jumlah Kaki</th> 
             <th>Cari di Google</th>
         </tr>
         <?php
-        $data = array('Ayam', 'Angsa', 'Bebek', 'Domba', 'Kalkun', 'Kambing', 'Kelinci', 'Kerbau', 'Kuda', 'Sapi');
+
+        $data = array( 'Ayam' => "2",'Angsa' => "2",'Bebek' => 2,'Domba' => "4",'Kalkun' => "2",'Kambing' => "4",'Kelinci' => "4",'Kerbau' => "4",'Kuda' => "4",'Sapi' => "4"
+        );
         $i = 1;
-        foreach ($data as $item) {
+        foreach ($data as $item => $legs) {
         ?>
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $item ?></td>
-            <td><img src="img/<?php echo $item ?>.jpg" width="50" height="50"></td>
+            <td><img src="img/<?php echo $item ?>.jpg" width="50" height="50" alt="<?php echo $item ?>"></td>
+            <td><?php echo $legs ?></td> 
             <td><a href="https://www.google.com/search?tbm=isch&q=<?php echo $item ?>" target="_blank">Cari</a></td>
         </tr>
         <?php
         $i++;
         }
         ?>
-       
     </table>
 </body>
 </html>
